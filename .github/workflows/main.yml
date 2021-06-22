@@ -27,7 +27,6 @@ jobs:
       - name: Azure PowerShell Action
         uses: Azure/powershell@v1
         with:
-         uses: Msrinath-71/Test/Veracode scans
          inlineScript: 
               Write-Host "Get App build list"
               $id= "2c6823bbd50562ed3e88a2acba6e36d9"

@@ -1,0 +1,3 @@
+FROM veracode/api-wrapper-java:latest
+script:
+    - java -jar /opt/veracode/api-wrapper.jar  -vid 2c6823bbd50562ed3e88a2acba6e36d9  -vkey d352818e85caca72327b268fe670b0d246dfe3e6d1ea4a380ce19eb1bcd37e6df6056dd78c75caff064023aa060b3d9e638662cda665f1df740345f4ea750b95 -action GetBuildList  -appid 464177   -sandboxid  3331502  -outputfilepath ./getbuild.xml"

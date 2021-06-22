@@ -39,8 +39,18 @@ jobs:
         with:
           name: Verascan
           path: Veracode-Scans/
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.10
+        with:
+    # Artifact name
+          name: Verascan
+    # Desti nation path
+          path: Veracode-Scans/
+          
+          
+          
     
    
 
    
-     
+ 

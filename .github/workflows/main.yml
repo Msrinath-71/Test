@@ -33,7 +33,7 @@ jobs:
            Write-Host "Get App build list"
                $id= "2c6823bbd50562ed3e88a2acba6e36d9"
                $ky="d352818e85caca72327b268fe670b0d246dfe3e6d1ea4a380ce19eb1bcd37e6df6056dd78c75caff064023aa060b3d9e638662cda665f1df740345f4ea750b95"
-               $path= " VeracodeC#API.exe -vid $id  -vkey $ky -action GetBuildList  -appid 464177   -sandboxid  3331502  -outputfilepath  Veracode-Scans\getbuild.xml"
+               $path= "./VeracodeC#API.exe -vid $id  -vkey $ky -action GetBuildList  -appid 464177   -sandboxid  3331502  -outputfilepath ./Veracode-Scans/getbuild.xml"
                Invoke-Expression -Command "$path"
    
      

@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: check version
         id: version
-        run: echo "version is ${{github.event.repository.name }}.${{jobs.test.steps.time.outputs.time }}"
+        run: echo "version is ${{github.event.repository.name }}.${{needs.test.time.outputs.time}}"
         
 
           

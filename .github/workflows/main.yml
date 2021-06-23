@@ -22,13 +22,15 @@ jobs:
       with:
          timeZone: 5.5
          format: 'YYYY-MM-DD-HH-mm-ss'
+   outputs:
+     Value: ${{github.event.repository.name }}.${{steps.time.outputs.time}}
  Test1:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: check version
         id: version
-        run: echo "version is ${{github.event.repository.name }}.${{needs.test.outputs.time}}"
+        run: echo "version is ${{needs.test.outputs.Value}}"
         
 
           

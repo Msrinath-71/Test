@@ -8,22 +8,27 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
+    branches: [ main]
+    
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+       
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+ test:
+   runs-on: ubuntu-latest
+   steps:
+    - id: time
+      uses: nanzm/get-time-action@v1.1
+      with:
+         timeZone: 5.5
+         format: 'YYYY-MM-DD-HH-mm-ss'
+   outputs:
+     Value: ${{github.event.repository.name }}.${{steps.time.outputs.time}}
+ Test1:
+    needs: [test]
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - run: date
-     
-     
+      - name: check version
+        id: version
+        run: echo "version is ${{needs.test.outputs.Value}}"
+        

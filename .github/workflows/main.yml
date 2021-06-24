@@ -5,8 +5,7 @@ name: CI
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ develop ]
+  
   pull_request:
     branches: [ develop ]
     
@@ -31,6 +30,19 @@ jobs:
       - name: check version
         id: version
         run: echo "version is ${{needs.test.outputs.Value}}"
+        
+        
+ Test2:
+   runs-on: windows-latest
+   steps:
+    - name: Checkout private tools
+      uses: actions/checkout@v2
+      with:
+       repository: mckesson/hvs-reporting-portal-veracode-reports
+
+       token: ${{ secrets.API_TOKEN_GITHUB }} # `GitHub_PAT` is a secret that contains your PAT
+       path: 'Veracode-file'
+  
         
 
           

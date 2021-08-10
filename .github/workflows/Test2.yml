@@ -34,9 +34,9 @@ jobs:
   
    runs-on: ubuntu-latest
    steps:
-      - id: testing the approval
-        run: |
-             echo" testing is successfull"
+    - name: testing the approvals
+      run: |
+           echo" testing is successfull"
       
      
    

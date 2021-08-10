@@ -36,7 +36,7 @@ jobs:
    steps:
     - name: testing the approvals
       run: |
-           echo" testing is successfull"
+           echo "testing is successfull"
       
      
    
